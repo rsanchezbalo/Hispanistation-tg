@@ -13,37 +13,37 @@ Format:
 	voteweight [number] (How much to count each player vote as, defaults to 1, setting to 0.5 counts each vote as half a vote, 2 as double, etc, Setting to 0 disables the map but allows players to still pick it)
 endmap
 
-map tgstation2
+#map tgstation2
 	friendlyname Box Station
 	default
 	#voteweight 1.5
 endmap
 
-map metastation
+#map metastation
 	friendlyname Meta Station
 	minplayers 25
 	#voteweight 0.5
 endmap
 
-#map ministation
+map ministation
 	friendlyname Mini Station
 	maxplayers 30
 	voteweight 0
 endmap
 
-map birdstation
+#map birdstation
 	friendlyname Bird Boat Station
 	maxplayers 35
 endmap
 
-map dreamstation
+#map dreamstation
 	friendlyname Dream Station
 endmap
 
-map efficiencystation
+#map efficiencystation
 	friendlyname Efficiency Station
 endmap
 
-map pubbystation
+#map pubbystation
 	friendlyname Pubby Station
 endmap
