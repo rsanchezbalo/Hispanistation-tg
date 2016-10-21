@@ -4,7 +4,6 @@
 	layer = MASSIVE_OBJ_LAYER
 	density = FALSE
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-
 /obj/structure/destructible/clockwork/massive/New()
 	..()
 	poi_list += src

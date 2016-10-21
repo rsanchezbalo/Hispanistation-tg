@@ -30630,12 +30630,15 @@
 	},
 /area/security/checkpoint/engineering)
 "bbn" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/glass{
-	name = "Library"
+/obj/structure/closet/emcloset,
+/obj/machinery/status_display{
+	density = 0;
+	layer = 4;
+	pixel_x = -32;
+	pixel_y = 0
 	},
-/turf/open/floor/wood,
-/area/library)
+/turf/open/floor/plasteel/black,
+/area/hallway/primary/central)
 "bbo" = (
 /obj/machinery/space_heater,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -43131,8 +43134,9 @@
 "bwj" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/door/airlock/glass{
-	name = "Library"
+/obj/machinery/door/airlock/centcom{
+	name = "Library";
+	opacity = 1
 	},
 /turf/open/floor/wood,
 /area/library)
@@ -43141,8 +43145,9 @@
 	req_access_txt = 1
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/glass{
-	name = "Library"
+/obj/machinery/door/airlock/centcom{
+	name = "Library";
+	opacity = 1
 	},
 /turf/open/floor/wood,
 /area/library)
@@ -48959,10 +48964,6 @@
 	pixel_x = -32;
 	pixel_y = 0
 	},
-/obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("SS13")
-	},
 /turf/open/floor/wood,
 /area/library)
 "bGD" = (
@@ -53873,13 +53874,13 @@
 	network = list("SS13")
 	},
 /obj/structure/table/wood,
-/obj/item/device/taperecorder,
-/obj/item/device/tape,
 /turf/open/floor/wood,
 /area/library)
 "bOZ" = (
 /obj/machinery/light/small,
-/obj/machinery/libraryscanner,
+/obj/machinery/photocopier{
+	pixel_y = 3
+	},
 /turf/open/floor/wood,
 /area/library)
 "bPa" = (
@@ -90386,22 +90387,17 @@
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/supply)
 "cYN" = (
-/obj/machinery/light{
-	dir = 1
+/turf/closed/wall/shuttle{
+	icon_state = "swall_s10";
+	dir = 2
 	},
-/obj/machinery/status_display{
-	pixel_y = 30
-	},
-/obj/machinery/photocopier{
-	pixel_y = 3
-	},
-/turf/open/floor/wood,
-/area/library)
+/area/shuttle/supply)
 "cYO" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
-/turf/open/floor/wood,
-/area/library)
+/turf/closed/wall/shuttle{
+	icon_state = "swall3";
+	dir = 2
+	},
+/area/shuttle/supply)
 "cYP" = (
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/supply)
@@ -90464,58 +90460,33 @@
 /turf/open/floor/plasteel/white,
 /area/toxins/xenobiology)
 "cYV" = (
-/obj/structure/table/wood,
-/obj/item/device/camera_film{
-	pixel_x = -3;
-	pixel_y = 5
+/turf/closed/wall/shuttle{
+	icon_state = "swall7";
+	dir = 2
 	},
-/obj/item/device/camera_film{
-	pixel_y = 9
-	},
-/obj/item/device/radio/intercom{
-	dir = 4;
-	name = "Station Intercom (General)";
-	pixel_x = 27
-	},
-/turf/open/floor/wood,
-/area/library)
+/area/shuttle/supply)
 "cYW" = (
 /turf/open/floor/mineral/titanium/blue,
 /turf/closed/wall/mineral/titanium/interior,
 /area/shuttle/supply)
 "cYX" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 8
+/turf/closed/wall/shuttle{
+	icon_state = "swall11";
+	dir = 2
 	},
-/obj/item/device/radio/intercom{
-	freerange = 1;
-	frequency = 1459;
-	name = "Station Intercom (General)";
-	pixel_x = -30
-	},
-/turf/open/floor/plasteel/neutral/corner{
-	dir = 8
-	},
-/area/hallway/primary/central)
+/area/shuttle/supply)
 "cYY" = (
-/obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement,
-/obj/structure/noticeboard{
-	desc = "A board for pinning important notices upon. Probably helpful for keeping track of requests.";
-	dir = 8;
-	name = "requests board";
-	pixel_x = 32;
-	pixel_y = 0
+/turf/open/floor/plasteel/shuttle,
+/turf/closed/wall/shuttle/interior{
+	icon_state = "swall_f6"
 	},
-/turf/open/floor/wood,
-/area/library)
+/area/shuttle/supply)
 "cYZ" = (
-/obj/machinery/light_switch{
-	pixel_x = 28;
-	pixel_y = 0
+/turf/closed/wall/shuttle{
+	icon_state = "swall_s5";
+	dir = 2
 	},
-/turf/open/floor/wood,
-/area/library)
+/area/shuttle/supply)
 "cZa" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -90524,16 +90495,17 @@
 /turf/open/floor/plating,
 /area/shuttle/supply)
 "cZb" = (
-/obj/structure/closet/emcloset,
-/turf/open/floor/plasteel/black,
-/area/hallway/primary/central)
-"cZc" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 24
+/turf/closed/wall/shuttle{
+	icon_state = "swall15";
+	dir = 2
 	},
-/turf/open/floor/wood,
-/area/library)
+/area/shuttle/supply)
+"cZc" = (
+/turf/closed/wall/shuttle{
+	icon_state = "swall_s9";
+	dir = 2
+	},
+/area/shuttle/supply)
 "cZd" = (
 /obj/structure/shuttle/engine/propulsion,
 /turf/open/floor/plating,
@@ -90623,31 +90595,21 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/transport)
 "cZs" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/turf/open/floor/plasteel/shuttle,
+/turf/closed/wall/shuttle/interior{
+	icon_state = "swall_f10"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 5
-	},
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/turf/open/floor/wood,
-/area/library)
+/area/shuttle/transport)
 "cZt" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion";
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 5
+/turf/closed/wall/shuttle{
+	icon_state = "swall_s5";
+	dir = 2
 	},
-/turf/open/floor/carpet,
-/area/library)
+/area/shuttle/transport)
 "cZu" = (
 /obj/structure/closet/crate,
 /turf/open/floor/mineral/titanium/blue,
@@ -114046,7 +114008,7 @@ bNu
 bBI
 bwh
 bSe
-cZs
+bSd
 bDw
 bDw
 bwh
@@ -114305,7 +114267,7 @@ bwh
 bPc
 bTv
 bUN
-cZt
+bSd
 bwh
 cnY
 bZU
@@ -115064,11 +115026,11 @@ bwh
 bwh
 bwh
 bwh
-cYN
+bDA
 byf
 byf
 bKb
-bKd
+bKc
 bLJ
 bBI
 bPa
@@ -115321,14 +115283,14 @@ bwh
 byi
 bAa
 bBL
+bDB
+aOo
+bGG
+bDC
+bKd
 bBI
-byf
-byf
 bBI
-cYV
-cYY
-cYZ
-cZc
+bBI
 bQy
 bSi
 bTy
@@ -115578,14 +115540,14 @@ bwh
 aGc
 bAb
 bwh
-bDA
-byf
-byf
-bDC
 bwh
 bwh
 bwh
 bwh
+bLL
+bNx
+bNw
+bPb
 bwh
 bSj
 bTz
@@ -115835,14 +115797,14 @@ bwl
 bwh
 bwh
 bwh
-cYO
-bbn
-bbn
-cYO
-bwh
 bwi
-cZb
+bbn
 aXs
+bwh
+bwh
+bwh
+bwh
+bwh
 bwh
 bwh
 bwh
@@ -116095,8 +116057,8 @@ bBM
 bwm
 bFb
 bwm
-bwm
-cYX
+bLK
+bFb
 bwm
 bwm
 bwm

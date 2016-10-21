@@ -2,9 +2,9 @@ var/datum/subsystem/spacedrift/SSspacedrift
 
 /datum/subsystem/spacedrift
 	name = "Space Drift"
-	priority = 30
+	priority = 40
 	wait = 5
-	flags = SS_NO_INIT|SS_KEEP_TIMING
+	flags = SS_NO_INIT|SS_BACKGROUND
 
 	var/list/currentrun = list()
 	var/list/processing = list()

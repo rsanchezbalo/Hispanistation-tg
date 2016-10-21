@@ -16,9 +16,9 @@ set REPO_BRANCH=master
 
 
 REM what map file to use. This should be the name of the dm, not dmm (and without the .dm part) (defaults to what ever is ticked in the dme)
-set MAPFILE=tgstation2
+REM set MAPFILE=tgstation2
 REM set MAPFILE=metastation
-REM set MAPFILE=ministation
+set MAPFILE=ministation
 
 
 REM port to use (only used to start the server in the start-server script)

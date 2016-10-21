@@ -1,8 +1,5 @@
 <!-- Most valid html will work in here, excluding images. -->
 
-<h1>Welcome to NSS Castro!</h1>
+<h1>Welcome to NSS CASTRO!</h1>
 
-<i>HISPANISTATION HA VUELTO, HOME OF THE GRIEF SINCE 2013!<i>
-<br>
-"No seas la perra de la estación, escoge un trabajo real y empieza a ser alguien."<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HoS Duskson.
+<i>HISPANISTATION HA VUELTO, HOME OF THE GRIEF SINCE 2013</i>

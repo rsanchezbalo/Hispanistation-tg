@@ -55,6 +55,7 @@
 				return
 			contents += I
 			stored_extinguisher = I
+			update_icon()
 			user << "<span class='notice'>You place [I] in [src].</span>"
 			update_icon()
 		else

@@ -440,17 +440,16 @@
 		dead = 1
 
 
-
-/obj/machinery/hydroponics/proc/mutatepest(mob/user)
+/obj/machinery/hydroponics/proc/mutatepest()
 	if(pestlevel > 5)
-		message_admins("[ADMIN_LOOKUPFLW(user)] caused spiderling pests to spawn in a hydro tray")
-		log_game("[key_name(user)] caused spiderling pests to spawn in a hydro tray")
 		visible_message("<span class='warning'>The pests seem to behave oddly...</span>")
-		spawn_atom_to_turf(/obj/structure/spider/spiderling/hunter, src, 3, FALSE)
+		for(var/i=0, i<3, i++)
+			var/obj/structure/spider/spiderling/S = new(src.loc)
+			S.grow_as = /mob/living/simple_animal/hostile/poison/giant_spider/hunter
 	else
-		user << "<span class='warning'>The pests seem to behave oddly, but quickly settle down...</span>"
+		usr << "<span class='warning'>The pests seem to behave oddly, but quickly settle down...</span>"
 
-/obj/machinery/hydroponics/proc/applyChemicals(datum/reagents/S, mob/user)
+/obj/machinery/hydroponics/proc/applyChemicals(datum/reagents/S)
 	if(myseed)
 		myseed.on_chem_reaction(S) //In case seeds have some special interactions with special chems, currently only used by vines
 
@@ -459,7 +458,7 @@
 		switch(rand(100))
 			if(91 to 100)
 				adjustHealth(-10)
-				user << "<span class='warning'>The plant shrivels and burns.</span>"
+				usr << "<span class='warning'>The plant shrivels and burns.</span>"
 			if(81 to 90)
 				mutatespecie()
 			if(66 to 80)
@@ -467,13 +466,13 @@
 			if(41 to 65)
 				mutate()
 			if(21 to 41)
-				user << "<span class='notice'>The plants don't seem to react...</span>"
+				usr << "<span class='notice'>The plants don't seem to react...</span>"
 			if(11 to 20)
 				mutateweed()
 			if(1 to 10)
-				mutatepest(user)
+				mutatepest()
 			else
-				user << "<span class='notice'>Nothing happens...</span>"
+				usr << "<span class='notice'>Nothing happens...</span>"
 
 	// 2 or 1 units is enough to change the yield and other stats.// Can change the yield and other stats, but requires more than mutagen
 	else if(S.has_reagent("mutagen", 2) || S.has_reagent("radium", 5) || S.has_reagent("uranium", 5))
@@ -669,9 +668,9 @@
 			if(33	to 65)
 				mutateweed()
 			if(1   to 32)
-				mutatepest(user)
+				mutatepest()
 			else
-				user << "<span class='warning'>Nothing happens...</span>"
+				usr << "<span class='warning'>Nothing happens...</span>"
 
 /obj/machinery/hydroponics/attackby(obj/item/O, mob/user, params)
 	//Called when mob user "attacks" it with object O
@@ -756,7 +755,7 @@
 			if(istype(reagent_source, /obj/item/weapon/reagent_containers/food/snacks) || istype(reagent_source, /obj/item/weapon/reagent_containers/pill))
 				qdel(reagent_source)
 
-			H.applyChemicals(S, user)
+			H.applyChemicals(S)
 
 			S.clear_reagents()
 			qdel(S)
