@@ -102,21 +102,11 @@ var/global/list/station_names = list("")
 
 var/global/list/station_suffixes = list("")
 
-var/global/list/greek_letters = list("Alpha", "Beta", "Gamma", "Delta",
-	"Epsilon", "Zeta", "Eta", "Theta", "Iota", "Kappa", "Lambda", "Mu",
-	"Nu", "Xi", "Omicron", "Pi", "Rho", "Sigma", "Tau", "Upsilon", "Phi",
-	"Chi", "Psi", "Omega")
+var/global/list/greek_letters = list("")
 
-var/global/list/phonetic_alphabet = list("Alpha", "Bravo", "Charlie",
-	"Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliet",
-	"Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec",
-	"Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "X-ray",
-	"Yankee", "Zulu")
+var/global/list/phonetic_alphabet = list("")
 
-var/global/list/numbers_as_words = list("One", "Two", "Three", "Four",
-	"Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
-	"Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
-	"Eighteen", "Nineteen")
+var/global/list/numbers_as_words = list("NSS Castro")
 
 /proc/generate_number_strings()
 	var/list/L
@@ -125,4 +115,4 @@ var/global/list/numbers_as_words = list("One", "Two", "Three", "Four",
 		L += "\Roman[i]"
 	return L
 
-var/global/list/station_numerals = greek_letters + phonetic_alphabet + numbers_as_words + generate_number_strings()
+var/global/list/station_numerals = numbers_as_words
