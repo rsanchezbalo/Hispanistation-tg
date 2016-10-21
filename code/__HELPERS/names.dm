@@ -27,7 +27,7 @@ var/command_name = null
 	if (command_name)
 		return command_name
 
-	var/name = "Cuban Central Command"
+	var/name = "Central Command"
 
 	command_name = name
 	return name
@@ -67,6 +67,7 @@ var/religion_name = null
 	return station_name
 
 /proc/new_station_name()
+	var/random = rand(1,5)
 	var/name = ""
 	var/new_station_name = ""
 
@@ -78,8 +79,8 @@ var/religion_name = null
 
 	// Prefix
 	for(var/holiday_name in SSevent.holidays)
-		//if(holiday_name == "Friday the 13th")
-			//random = 13
+		if(holiday_name == "Friday the 13th")
+			random = 13
 		var/datum/holiday/holiday = SSevent.holidays[holiday_name]
 		name = holiday.getStationPrefix()
 		//get normal name
@@ -93,7 +94,19 @@ var/religion_name = null
 	new_station_name += name + " "
 
 	// ID Number
-	new_station_name += pick(numbers_as_words)
+	switch(random)
+		if(1)
+			new_station_name += "[rand(1, 99)]"
+		if(2)
+			new_station_name += pick(greek_letters)
+		if(3)
+			new_station_name += "\Roman[rand(1,99)]"
+		if(4)
+			new_station_name += pick(phonetic_alphabet)
+		if(5)
+			new_station_name += pick(numbers_as_words)
+		if(13)
+			new_station_name += pick("13","XIII","Thirteen")
 	return new_station_name
 
 var/syndicate_name = null
