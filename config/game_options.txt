@@ -17,7 +17,7 @@ REVIVAL_BRAIN_LIFE -1
 ### RENAMING ###
 
 #Uncomment to allow cyborgs to rename themselves at roundstart.  Has no effect on roboticists renaming cyborgs the normal way.
-#RENAME_CYBORG
+RENAME_CYBORG
 
 ### OOC DURING ROUND ###
 #Comment this out if you want OOC to be automatically disabled during the round, it will be enabled during the lobby and after the round end results.
@@ -51,7 +51,7 @@ ANIMAL_DELAY 0
 
 ### NAMES ###
 ## If uncommented this adds a random surname to a player's name if they only specify one name.
-#HUMANS_NEED_SURNAMES
+HUMANS_NEED_SURNAMES
 
 ## If uncommented, this forces all players to use random names !and appearances!.
 #FORCE_RANDOM_NAMES
@@ -76,20 +76,20 @@ ALERT_DELTA Destruction of the station is imminent. All crew are instructed to o
 ## Default probablity is 1, increase to make that mode more likely to be picked.
 ## Set to 0 to disable that mode.
 
-PROBABILITY TRAITOR 5
-PROBABILITY TRAITORCHAN 4
-PROBABILITY DOUBLE_AGENTS 3
-PROBABILITY NUCLEAR 2
+PROBABILITY TRAITOR 4
+PROBABILITY TRAITORCHAN 2
+PROBABILITY DOUBLE_AGENTS 2
+PROBABILITY NUCLEAR 4
 PROBABILITY REVOLUTION 2
 PROBABILITY SHADOWLING 2
-PROBABILITY GANG 2
-PROBABILITY CULT 2
+PROBABILITY GANG 3
+PROBABILITY CULT 3
 PROBABILITY CHANGELING 2
-PROBABILITY WIZARD 4
-PROBABILITY MALFUNCTION 1
-PROBABILITY BLOB 2
+PROBABILITY WIZARD 2
+PROBABILITY MALFUNCTION 3
+PROBABILITY BLOB 3
 PROBABILITY RAGINMAGES 2
-PROBABILITY MONKEY 0
+PROBABILITY MONKEY 3
 PROBABILITY METEOR 0
 PROBABILITY EXTENDED 0
 PROBABILITY DEVIL 0
@@ -105,17 +105,17 @@ PROBABILITY SANDBOX 0
 CONTINUOUS TRAITOR
 CONTINUOUS TRAITORCHAN
 CONTINUOUS DOUBLE_AGENTS
-#CONTINUOUS NUCLEAR
-#CONTINUOUS REVOLUTION
-#CONTINUOUS SHADOWLING
+CONTINUOUS NUCLEAR
+CONTINUOUS REVOLUTION
+CONTINUOUS SHADOWLING
 CONTINUOUS GANG
 CONTINUOUS CULT
 CONTINUOUS CHANGELING
 CONTINUOUS WIZARD
 CONTINUOUS MALFUNCTION
 CONTINUOUS BLOB
-#CONTINUOUS RAGINMAGES
-#CONTINUOUS MONKEY
+CONTINUOUS RAGINMAGES
+CONTINUOUS MONKEY
 
 ##Note: do not toggle continuous off for these modes, as they have no antagonists and would thus end immediately!
 
@@ -129,7 +129,7 @@ CONTINUOUS EXTENDED
 MIDROUND_ANTAG TRAITOR
 MIDROUND_ANTAG TRAITORCHAN
 MIDROUND_ANTAG DOUBLE_AGENTS
-#MIDROUND_ANTAG  NUCLEAR
+MIDROUND_ANTAG  NUCLEAR
 #MIDROUND_ANTAG  REVOLUTION
 #MIDROUND_ANTAG  SHADOWLING
 #MIDROUND_ANTAG  GANG
@@ -148,13 +148,13 @@ SHUTTLE_REFUEL_DELAY 12000
 ## Variables calculate how number of antagonists will scale to population.
 ## Used as (Antagonists = Population / Coeff)
 ## Set to 0 to disable scaling and use default numbers instead.
-TRAITOR_SCALING_COEFF 6
-CHANGELING_SCALING_COEFF 6
+TRAITOR_SCALING_COEFF 10
+CHANGELING_SCALING_COEFF 10
 
 ## Variables calculate how number of open security officer positions will scale to population.
 ## Used as (Officers = Population / Coeff)
 ## Set to 0 to disable scaling and use default numbers instead.
-SECURITY_SCALING_COEFF 8
+SECURITY_SCALING_COEFF 3
 
 # The number of objectives traitors get.
 # Not including escaping/hijacking.
@@ -162,13 +162,13 @@ TRAITOR_OBJECTIVES_AMOUNT 2
 
 ## Uncomment to prohibit jobs that start with loyalty
 ## implants from being most antagonists.
-#PROTECT_ROLES_FROM_ANTAGONIST
+PROTECT_ROLES_FROM_ANTAGONIST
 
 ## Uncomment to prohibit assistants from becoming most antagonists.
-#PROTECT_ASSISTANT_FROM_ANTAGONIST
+PROTECT_ASSISTANT_FROM_ANTAGONIST
 
 ## If non-human species are barred from joining as a head of staff
-#ENFORCE_HUMAN_AUTHORITY
+ENFORCE_HUMAN_AUTHORITY
 
 ## If late-joining players have a chance to become a traitor/changeling
 ALLOW_LATEJOIN_ANTAGONISTS
@@ -182,7 +182,7 @@ ALLOW_RANDOM_EVENTS
 
 ## Multiplier for earliest start time of dangerous events.
 ## Set to 0 to make dangerous events avaliable from round start.
-EVENTS_MIN_TIME_MUL 1
+EVENTS_MIN_TIME_MUL 5
 
 ## Multiplier for minimal player count (players = alive non-AFK humans) for dangerous events to start.
 ## Set to 0 to make dangerous events avaliable for all populations.
@@ -200,13 +200,13 @@ ALLOW_AI
 
 ### Peacekeeper Borg ###
 ## Uncomment to prevent the peacekeeper cyborg module from being chosen
-#DISABLE_PEACEBORG
+DISABLE_PEACEBORG
 
 ### AWAY MISSIONS ###
 
 ## How long the delay is before the Away Mission gate opens. Default is half an hour.
 ## 600 is one minute.
-GATEWAY_DELAY 18000
+GATEWAY_DELAY 9000
 
 
 ### ACCESS ###
@@ -226,7 +226,7 @@ MINIMAL_ACCESS_THRESHOLD 20
 #ASSISTANTS_HAVE_MAINT_ACCESS
 
 ## Uncoment to give security maint access. Note that if you comment JOBS_HAVE_MINIMAL_ACCESS security already gets maint from that.
-#SECURITY_HAS_MAINT_ACCESS
+SECURITY_HAS_MAINT_ACCESS
 
 ## Uncomment to give everyone maint access.
 #EVERYONE_HAS_MAINT_ACCESS
@@ -237,7 +237,7 @@ SEC_START_BRIG
 
 ### GHOST INTERACTION ###
 ## Uncomment to let ghosts spin chairs. You may be wondering why this is a config option. Don't ask.
-#GHOST_INTERACTION
+GHOST_INTERACTION
 
 ### NON-VOCAL SILICONS ###
 ## Uncomment to stop the AI, or cyborgs, from having vocal communication.
@@ -256,7 +256,7 @@ SEC_START_BRIG
 ## Set to 0/commented for "off", silicons will just start with Asimov.
 ## Set to 1 for "custom", silicons will start with the custom laws defined in silicon_laws.txt. (If silicon_laws.txt is empty, the AI will spawn with asimov and Custom boards will auto-delete.)
 ## Set to 2 for "random", silicons will start with a random lawset picked from (at the time of writing): P.A.L.A.D.I.N., Corporate, Asimov. More can be added by changing the law datum paths in ai_laws.dm.
-DEFAULT_LAWS 1
+DEFAULT_LAWS 2
 
 ### SILICON LAW MAX AMOUNT ###
 ## The maximum number of laws a silicon can have
@@ -304,14 +304,14 @@ ROUNDSTART_RACES plasmaman
 ##-------------------------------------------------------------------------------------------
 
 ## Uncomment to give players the choice of joining as a human with mutant bodyparts before they join the game
-#JOIN_WITH_MUTANT_HUMANS
+JOIN_WITH_MUTANT_HUMANS
 
 ## Assistant slot cap. Set to -1 for unlimited.
 ASSISTANT_CAP -1
 
 ## Starlight for exterior walls and breaches. Uncomment for starlight!
 ## This is disabled by default to make testing quicker, should be enabled on production servers or testing servers messing with lighting
-#STARLIGHT
+STARLIGHT
 
 ## Uncomment to bring back old grey suit assistants instead of the now default rainbow colored assistants.
 #GREY_ASSISTANTS
@@ -327,9 +327,9 @@ MIDROUND_ANTAG_LIFE_CHECK 0.7
 ###Limit Spell Choices##
 ## Uncomment to disallow wizards from using certain spells that may be too chaotic/fun for your playerbase
 
-#NO_SUMMON_GUNS
-#NO_SUMMON_MAGIC
-#NO_SUMMON_EVENTS
+NO_SUMMON_GUNS
+NO_SUMMON_MAGIC
+NO_SUMMON_EVENTS
 
 ##Comment for "normal" explosions, which ignore obstacles
 ##Uncomment for explosions that react to doors and walls
@@ -354,7 +354,7 @@ BOMBCAP 20
 # a less lootfilled or smaller or less round effecting ruin costs less to
 # spawn, while the converse is true. Alter this number to affect the amount
 # of ruins.
-LAVALAND_BUDGET 60
+LAVALAND_BUDGET 100
 
 ## Space Ruin Budged
-Space_Budget 16
+Space_Budget 100
