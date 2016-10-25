@@ -1,5 +1,5 @@
 ## Server name: This appears at the top of the screen in-game. Remove the # infront of SERVERNAME and replace 'tgstation' with the name of your choice
-SERVERNAME [ES] Hispanistation
+SERVERNAME <img src="http://i.imgur.com/D8Wbu0Y.gif">[ES] Hispanistation
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
 STATIONNAME NSS Castro
