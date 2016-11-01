@@ -3,7 +3,7 @@
 	config_tag = "devil"
 	antag_flag = ROLE_DEVIL
 	protected_jobs = list("Lawyer", "Librarian", "Chaplain", "Head of Security", "Captain", "AI")
-	required_players = 0
+	required_players = 6
 	required_enemies = 1
 	recommended_enemies = 4
 	reroll_friendly = 1
