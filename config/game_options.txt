@@ -291,7 +291,7 @@ ROUNDSTART_RACES plasmaman
 #ROUNDSTART_RACES silver
 #ROUNDSTART_RACES uranium
 #ROUNDSTART_RACES abductor
-ROUNDSTART_RACES synth
+#ROUNDSTART_RACES synth
 
 ## Races that are straight upgrades. If these are on expect powergamers to always pick them
 #ROUNDSTART_RACES skeleton
@@ -311,7 +311,7 @@ ASSISTANT_CAP -1
 
 ## Starlight for exterior walls and breaches. Uncomment for starlight!
 ## This is disabled by default to make testing quicker, should be enabled on production servers or testing servers messing with lighting
-STARLIGHT
+#STARLIGHT
 
 ## Uncomment to bring back old grey suit assistants instead of the now default rainbow colored assistants.
 #GREY_ASSISTANTS
@@ -354,7 +354,7 @@ BOMBCAP 20
 # a less lootfilled or smaller or less round effecting ruin costs less to
 # spawn, while the converse is true. Alter this number to affect the amount
 # of ruins.
-LAVALAND_BUDGET 40
+LAVALAND_BUDGET 15
 
 ## Space Ruin Budged
-Space_Budget 60
+Space_Budget 0
