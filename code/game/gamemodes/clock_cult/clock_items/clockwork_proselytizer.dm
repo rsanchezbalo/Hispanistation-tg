@@ -13,6 +13,7 @@
 	var/metal_to_alloy = FALSE
 	var/repairing = null //what we're currently repairing, if anything
 	var/refueling = FALSE //if we're currently refueling from a cache
+	var/speed_multiplier = 1 //how fast this proselytizer works
 
 /obj/item/clockwork/clockwork_proselytizer/preloaded
 	stored_alloy = REPLICANT_WALL_MINUS_FLOOR+REPLICANT_WALL_TOTAL
@@ -23,6 +24,7 @@
 	metal_to_alloy = TRUE
 	item_state = "nothing"
 	w_class = 1
+	speed_multiplier = 0.5
 	var/debug = FALSE
 
 /obj/item/clockwork/clockwork_proselytizer/scarab/proselytize(atom/target, mob/living/user)
@@ -38,11 +40,11 @@
 /obj/item/clockwork/clockwork_proselytizer/examine(mob/living/user)
 	..()
 	if(is_servant_of_ratvar(user) || isobserver(user))
-		user << "<span class='brass'>Can be used to convert walls, floors, windows, airlocks, windoors, and grilles to clockwork variants.</span>"
+		user << "<span class='brass'>Can be used to convert walls, floors, windows, airlocks, and a variety of other objects to clockwork variants.</span>"
 		user << "<span class='brass'>Can also form some objects into Brass sheets, as well as reform Clockwork Walls into Clockwork Floors, and vice versa.</span>"
-		if(metal_to_alloy)
-			user << "<span class='alloy'>It can convert Brass sheets to liquified replicant alloy at a rate of <b>1</b> sheet to <b>[REPLICANT_FLOOR]</b> alloy.</span>"
 		if(uses_alloy)
+			if(metal_to_alloy)
+				user << "<span class='alloy'>It can convert Brass sheets to liquified replicant alloy at a rate of <b>1</b> sheet to <b>[REPLICANT_FLOOR]</b> alloy.</span>"
 			user << "<span class='alloy'>It has <b>[stored_alloy]/[max_alloy]</b> units of liquified alloy stored.</span>"
 			user << "<span class='alloy'>Use it on a Tinkerer's Cache, strike it with Replicant Alloy, or attack Replicant Alloy with it to add additional liquified alloy.</span>"
 			user << "<span class='alloy'>Use it in-hand to remove stored liquified alloy.</span>"
@@ -109,6 +111,8 @@
 	var/list/proselytize_values = target.proselytize_vals(user, src) //relevant values for proselytizing stuff, given as an associated list
 	if(!islist(proselytize_values))
 		if(proselytize_values != TRUE) //if we get true, fail, but don't send a message for whatever reason
+			if(!isturf(target)) //otherwise, if we didn't get TRUE and the original target wasn't a turf, try to proselytize the turf
+				return proselytize(get_turf(target), user)
 			user << "<span class='warning'>[target] cannot be proselytized!</span>"
 		return FALSE
 	if(can_use_alloy(RATVAR_ALLOY_CHECK))
@@ -126,6 +130,8 @@
 
 	if(can_use_alloy(RATVAR_ALLOY_CHECK)) //Ratvar makes it faster
 		proselytize_values["operation_time"] *= 0.5
+
+	proselytize_values["operation_time"] *= speed_multiplier
 
 	user.visible_message("<span class='warning'>[user]'s [name] begins tearing apart [target]!</span>", "<span class='brass'>You begin proselytizing [target]...</span>")
 	playsound(target, 'sound/machines/click.ogg', 50, 1)

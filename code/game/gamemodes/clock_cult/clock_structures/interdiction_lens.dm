@@ -7,19 +7,21 @@
 	construction_value = 25
 	active_icon = "interdiction_lens_active"
 	inactive_icon = "interdiction_lens"
+	unanchored_icon = "interdiction_lens_unwrenched"
 	break_message = "<span class='warning'>The lens flares a blinding violet before shattering!</span>"
 	break_sound = 'sound/effects/Glassbr3.ogg'
 	var/recharging = 0 //world.time when the lens was last used
 	var/recharge_time = 1200 //if it drains no power and affects no objects, it turns off for two minutes
 	var/disabled = FALSE //if it's actually usable
 	var/interdiction_range = 14 //how large an area it drains and disables in
+	var/list/rage_messages = list("...", "Disgusting.", "Die.", "Foul.", "Worthless.", "Mortal.", "Unfit.", "Weak.", "Fragile.", "Useless.", "Leave my sight!")
 
 /obj/structure/destructible/clockwork/powered/interdiction_lens/examine(mob/user)
 	..()
-	user << "<span class='[recharging > world.time ? "nezbere_small":"brass"]'>Its gemstone [recharging > world.time ? "has been breached by writhing tendrils of blackness that cover the totem" \
+	user << "<span class='[recharging > world.time ? "neovgre_small":"brass"]'>Its gemstone [recharging > world.time ? "has been breached by writhing tendrils of blackness that cover the totem" \
 	: "vibrates in place and thrums with power"].</span>"
 	if(is_servant_of_ratvar(user) || isobserver(user))
-		user << "<span class='nezbere_small'>If it fails to drain any electronics, it will disable itself for <b>[round(recharge_time/600, 1)]</b> minutes.</span>"
+		user << "<span class='neovgre_small'>If it fails to drain any electronics, it will disable itself for <b>[round(recharge_time/600, 1)]</b> minutes.</span>"
 
 /obj/structure/destructible/clockwork/powered/interdiction_lens/toggle(fast_process, mob/living/user)
 	..()
@@ -55,32 +57,38 @@
 
 			CHECK_TICK
 
+		var/efficiency = get_efficiency_mod()
+
 		for(var/M in atoms_to_test)
 			var/atom/movable/A = M
 			if(!A || qdeleted(A) || A == target_apc)
 				continue
-			power_drained += A.power_drain(TRUE)
+			power_drained += (A.power_drain(TRUE) * efficiency)
 
-			if(istype(A, /obj/machinery/camera))
-				var/obj/machinery/camera/C = A
-				if(C.isEmpProof() || !C.status)
-					continue
-				successfulprocess = TRUE
-				if(C.emped)
-					continue
-				C.emp_act(1)
-			else if(istype(A, /obj/item/device/radio))
-				var/obj/item/device/radio/O = A
-				successfulprocess = TRUE
-				if(O.emped || !O.on)
-					continue
-				O.emp_act(1)
-			else if((isliving(A) && !is_servant_of_ratvar(A)) || istype(A, /obj/structure/closet) || istype(A, /obj/item/weapon/storage)) //other things may have radios in them but we don't care
-				for(var/obj/item/device/radio/O in A.GetAllContents())
+			if(prob(1))
+				A << "<span class='neovgre'>\"[text2ratvar(pick(rage_messages))]\"</span>"
+
+			if(prob(100 * efficiency))
+				if(istype(A, /obj/machinery/camera))
+					var/obj/machinery/camera/C = A
+					if(C.isEmpProof() || !C.status)
+						continue
+					successfulprocess = TRUE
+					if(C.emped)
+						continue
+					C.emp_act(1)
+				else if(istype(A, /obj/item/device/radio))
+					var/obj/item/device/radio/O = A
 					successfulprocess = TRUE
 					if(O.emped || !O.on)
 						continue
 					O.emp_act(1)
+				else if((isliving(A) && !is_servant_of_ratvar(A)) || istype(A, /obj/structure/closet) || istype(A, /obj/item/weapon/storage)) //other things may have radios in them but we don't care
+					for(var/obj/item/device/radio/O in A.GetAllContents())
+						successfulprocess = TRUE
+						if(O.emped || !O.on)
+							continue
+						O.emp_act(1)
 
 			CHECK_TICK
 
