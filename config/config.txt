@@ -186,7 +186,7 @@ FORBID_SINGULO_POSSESSION
 #SHOW_IRC_NAME
 
 ##Defines the ticklag for the world.  0.9 is the normal one, 0.5 is smoother.
-TICKLAG 0.5
+TICKLAG 0.9
 
 ## Comment this out to disable automuting
 #AUTOMUTE_ON
@@ -246,7 +246,7 @@ NOTIFY_NEW_PLAYER_AGE 0
 #AGGRESSIVE_CHANGELOG
 
 ## Uncomment to have the game log runtimes to the log folder. (Note: this disables normal output in dd/ds, so it should be left off for testing.
-#LOG_RUNTIMES
+LOG_RUNTIMES
 
 ## Comment this out if you've used the mass conversion sql proc for notes or want to stop converting notes
 AUTOCONVERT_NOTES
@@ -274,7 +274,7 @@ ANNOUNCE_ADMIN_LOGIN
 
 ## GENERATE_MINIMAPS
 ## Generating minimaps(For crew monitor) is slow and bogs down testing, so its disabled by default and must be enabled by uncommenting this config if you are running a production server.
-GENERATE_MINIMAPS
+# GENERATE_MINIMAPS
 
 ## CLIENT VERSION CONTROL
 ## This allows you to configure the minimum required client version, as well as a warning version, and message for both.

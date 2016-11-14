@@ -186,7 +186,7 @@ EVENTS_MIN_TIME_MUL 30
 
 ## Multiplier for minimal player count (players = alive non-AFK humans) for dangerous events to start.
 ## Set to 0 to make dangerous events avaliable for all populations.
-EVENTS_MIN_PLAYERS_MUL 8
+EVENTS_MIN_PLAYERS_MUL 0
 
 
 ### AI ###
@@ -214,7 +214,7 @@ GATEWAY_DELAY 9000
 ## If the number of players ready at round starts exceeds this threshold, JOBS_HAVE_MINIMAL_ACCESS will automatically be enabled. Otherwise, it will be disabled.
 ## This is useful for accomodating both low and high population rounds on the same server.
 ## Comment out or set to 0 to disable this automatic toggle.
-MINIMAL_ACCESS_THRESHOLD 20
+MINIMAL_ACCESS_THRESHOLD 30
 
 ## Comment this out if you wish to use the setup where jobs have more access.
 ## This is intended for servers with low populations - where there are not enough
@@ -354,7 +354,7 @@ BOMBCAP 20
 # a less lootfilled or smaller or less round effecting ruin costs less to
 # spawn, while the converse is true. Alter this number to affect the amount
 # of ruins.
-LAVALAND_BUDGET 15
+LAVALAND_BUDGET 5
 
 ## Space Ruin Budged
 Space_Budget 0
