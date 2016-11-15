@@ -12,8 +12,8 @@ Chief Medical Officer=1,1
 Assistant=0,1
 
 Quartermaster=1,1
-Cargo Technician=1,1
-Shaft Miner=2,2
+Cargo Technician=2,2
+Shaft Miner=3,3
 
 Bartender=1,1
 Cook=1,1
@@ -28,9 +28,9 @@ Lawyer=1,1
 Chaplain=1,1
 
 Station Engineer=4,4
-Atmospheric Technician=0,1
+Atmospheric Technician=1,1
 
-Medical Doctor=3,3
+Medical Doctor=4,4
 Chemist=1,1
 Geneticist=0,1
 Virologist=0,1
