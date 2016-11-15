@@ -6,3 +6,4 @@ AurumCU = Game Admin
 Hessica = Game Admin
 SirBedrydant = Game Admin
 Shincry = Trial Admin
+Morthem = Trial Admin
