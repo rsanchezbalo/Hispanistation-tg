@@ -21,7 +21,7 @@ Botanist=2,2
 Janitor=1,1
 
 Clown=1,1
-Mime=0,1
+Mime=1,1
 Librarian=0,1
 Lawyer=0,1
 
@@ -39,8 +39,8 @@ Scientist=4,4
 Roboticist=1,1
 
 Warden=1,1
-Detective=0,1
-Security Officer=4,4
+Detective=1,1
+Security Officer=4,-1
 
 AI=0,1
 Cyborg=0,1
