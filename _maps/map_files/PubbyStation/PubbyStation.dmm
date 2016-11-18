@@ -5513,7 +5513,7 @@
 "cca" = (/obj/structure/cable{tag = "icon-1-2"; icon_state = "1-2"},/turf/open/floor/plasteel/vault{dir = 5},/area/tcommsat/computer)
 "ccb" = (/turf/closed/wall/r_wall,/area/tcommsat/server)
 "ccc" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/closed/wall/r_wall,/area/tcommsat/server)
-"ccd" = (/obj/structure/cable{tag = "icon-0-4"; icon_state = "0-4"},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/machinery/power/smes/engineering,/turf/open/floor/bluegrid{name = "Mainframe Base"; initial_gas_mix = "n2=100;TEMP=80"},/area/tcommsat/server)
+"ccd" = (/obj/structure/cable{tag = "icon-0-4"; icon_state = "0-4"},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/machinery/power/smes{capacity = 1e+007; charge = 7e+006},/turf/open/floor/bluegrid{name = "Mainframe Base"; initial_gas_mix = "n2=100;TEMP=80"},/area/tcommsat/server)
 "cce" = (/obj/structure/grille,/obj/structure/window/reinforced/fulltile,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_y = 0},/turf/open/floor/plating,/area/tcommsat/computer)
 "ccf" = (/obj/machinery/door/airlock/glass_engineering{cyclelinkeddir = 1; name = "Server Room"; req_access_txt = "61"},/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/open/floor/plasteel/vault{dir = 5},/area/tcommsat/computer)
 "ccg" = (/obj/machinery/blackbox_recorder,/turf/open/floor/bluegrid{name = "Mainframe Base"; initial_gas_mix = "n2=100;TEMP=80"},/area/tcommsat/server)
