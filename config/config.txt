@@ -157,7 +157,7 @@ FORUMURL https://discord.gg/HgugjxV
 WIKIURL http://www.tgstation13.org/wiki
 
 ##Rules address
-RULESURL https://discord.gg/HgugjxV
+RULESURL http://hispanistation.enjin.com/normas
 
 ##Github address
 GITHUBURL https://github.com/MattDuskson/Hispanistation-tg
