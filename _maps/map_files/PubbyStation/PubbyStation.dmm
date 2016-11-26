@@ -2826,7 +2826,7 @@
 "bcr" = (/obj/machinery/atmospherics/pipe/manifold/cyan/hidden{tag = "icon-manifold (WEST)"; icon_state = "manifold"; dir = 8},/turf/open/floor/plasteel,/area/hallway/secondary/entry)
 "bcs" = (/obj/machinery/door/firedoor,/obj/machinery/atmospherics/pipe/simple/cyan/hidden{tag = "icon-intact (EAST)"; icon_state = "intact"; dir = 4},/obj/machinery/door/poddoor/shutters/preopen{id = "aduana1"; name = "Shutter Aduana 1"},/turf/open/floor/plasteel,/area/hallway/secondary/entry)
 "bct" = (/obj/machinery/atmospherics/components/unary/vent_pump{dir = 8; layer = 2.4; on = 1},/turf/open/floor/plasteel,/area/hallway/secondary/entry)
-"bcu" = (/turf/open/floor/plasteel/goonplaque,/area/hallway/secondary/entry)
+"bcu" = (/turf/open/floor/plasteel/goonplaque{desc = "\"Esta placa recuerda la muerte de Fidel Castro en el año 2016, de su muerte biologica natural ya que no pudo ser clonado hasta 60 años mas tarde, y recuerda a los tripulantes los valores de la revolución\" Grabado encima de estas palabras, una imagen de un señor barbudo riendose mientras sujeta un puro."},/area/hallway/secondary/entry)
 "bcv" = (/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{dir = 8; initialize_directions = 11},/turf/open/floor/plasteel,/area/hallway/secondary/entry)
 "bcw" = (/obj/machinery/atmospherics/components/unary/vent_scrubber{dir = 8; on = 1; scrub_N2O = 0; scrub_Toxins = 0},/turf/open/floor/plasteel,/area/hallway/secondary/entry)
 "bcx" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/machinery/atmospherics/pipe/simple/supply/hidden,/turf/open/floor/plasteel,/area/hallway/primary/central)
