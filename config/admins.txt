@@ -1,9 +1,4 @@
-Fidelius = Host
-MattDuskson = Host
-PromethTK11 = Trial Admin
-AurumCU = Game Admin
-Hessica = Game Admin
-SirBedrydant = Game Admin
-Shincry = Trial Admin
-Morthem = Trial Admin
-ShaiHuludRider = Trial Admin
+Fidelius = Game Admin
+MattDuskson = Game Admin
+PromethTK11 = Game Admin
+Hessica = Host

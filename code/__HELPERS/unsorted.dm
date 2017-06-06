@@ -1,4 +1,4 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
+
 
 /*
  * A large number of misc global procs.
@@ -1262,9 +1262,14 @@ B --><-- A
 				closest_atom = A
 	return closest_atom
 
-/proc/pick_closest_path(value)
-	var/list/matches = get_fancy_list_of_types()
-	if (!isnull(value) && value!="")
+
+proc/pick_closest_path(value, list/matches = get_fancy_list_of_atom_types())
+	if (value == FALSE) //nothing should be calling us with a number, so this is safe
+		value = input("Enter type to find (blank for all, cancel to cancel)", "Search for type") as null|text
+		if (isnull(value))
+			return
+	value = trim(value)
+	if(!isnull(value) && value != "")
 		matches = filter_fancy_list(matches, value)
 
 	if(matches.len==0)
@@ -1274,7 +1279,7 @@ B --><-- A
 	if(matches.len==1)
 		chosen = matches[1]
 	else
-		chosen = input("Select an atom type", "Spawn Atom", matches[1]) as null|anything in matches
+		chosen = input("Select a type", "Pick Type", matches[1]) as null|anything in matches
 		if(!chosen)
 			return
 	chosen = matches[chosen]
@@ -1350,3 +1355,12 @@ B --><-- A
 	while(length(str) < 5)
 		str = "0" + str
 	. = str
+
+/atom/proc/Shake(pixelshiftx = 15, pixelshifty = 15, duration = 250)
+	var/initialpixelx = pixel_x
+	var/initialpixely = pixel_y
+	var/shiftx = rand(-pixelshiftx,pixelshiftx)
+	var/shifty = rand(-pixelshifty,pixelshifty)
+	animate(src, pixel_x = pixel_x + shiftx, pixel_y = pixel_y + shifty, time = 0.2, loop = duration)
+	pixel_x = initialpixelx
+	pixel_y = initialpixely
