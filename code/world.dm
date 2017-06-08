@@ -6,9 +6,9 @@
 	cache_lifespan = 7
 	hub = "Exadv1.spacestation13"
 	hub_password = "kMZy3U5jJHSiBQjr"
-	name = "/tg/ Station 13"
+	name = "ES Cordelia"
 	fps = 20
-	visibility = 0
+	visibility = 1
 #ifdef GC_FAILURE_HARD_LOOKUP
 	loop_checks = FALSE
 #endif
