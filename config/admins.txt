@@ -1,4 +1,4 @@
-Hessica = Hoster
+Hessica = Host
 MattDUskson = Game Master
 Fidelius = Game Master
 PromethTK11 = Game Master
