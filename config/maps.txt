@@ -13,15 +13,15 @@ Format:
 	disabled (disables the map)
 endmap
 
-map tgstation2
-	default
+#map tgstation2
+	#default
 	#voteweight 1.5
-endmap
+#endmap
 
-map metastation
-	minplayers 25
-	#voteweight 0.5
-endmap
+#map metastation
+#	minplayers 25
+#	#voteweight 0.5
+#endmap
 
 map pubbystation
 endmap
@@ -30,14 +30,14 @@ map omegastation
 	maxplayers 35
 endmap
 
-map deltastation
-	minplayers 50
-endmap
+#map deltastation
+#	minplayers 50
+#endmap
 
-map cerestation
-	minplayers 45
-endmap
+#map cerestation
+#	minplayers 45
+#endmap
 
-map runtimestation
-	disabled
-endmap
+#map runtimestation
+#	disabled
+#endmap
