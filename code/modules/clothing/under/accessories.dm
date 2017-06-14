@@ -85,6 +85,8 @@
 	item_color = "bronze"
 	materials = list(MAT_METAL=1000)
 	resistance_flags = FIRE_PROOF
+	var/medaltype = "medal" //Sprite used for medalbox
+	var/commended = FALSE
 
 //Pinning medals on people
 /obj/item/clothing/accessory/medal/attack(mob/living/carbon/human/M, mob/living/user)
@@ -103,6 +105,9 @@
 			else
 				user.visible_message("[user] is trying to pin [src] on [M]'s chest.", \
 									 "<span class='notice'>You try to pin [src] on [M]'s chest.</span>")
+			var/input
+			if(!commended && user != M)
+				input = stripped_input(user,"Please input a reason for this commendation, it will be recorded by Nanotrasen.", ,"", 140)
 			if(do_after(user, delay, target = M))
 				if(U.attach_accessory(src, user, 0)) //Attach it, do not notify the user of the attachment
 					if(user == M)
@@ -110,6 +115,12 @@
 					else
 						user.visible_message("[user] pins \the [src] on [M]'s chest.", \
 											 "<span class='notice'>You pin \the [src] on [M]'s chest.</span>")
+						if(input)
+							SSblackbox.add_details("commendation", json_encode(list("commender" = "[user.real_name]", "commendee" = "[M.real_name]", "medal" = "[src]", "reason" = input)))
+							GLOB.commendations += "[user.real_name] awarded <b>[M.real_name]</b> the <font color='blue'>[name]</font>! \n- [input]"
+							commended = TRUE
+							log_game("<b>[key_name(M)]</b> was given the following commendation by <b>[key_name(user)]</b>: [input]")
+							message_admins("<b>[key_name(M)]</b> was given the following commendation by <b>[key_name(user)]</b>: [input]")
 
 		else to_chat(user, "<span class='warning'>Medals can only be pinned on jumpsuits!</span>")
 	else ..()
@@ -128,6 +139,7 @@
 	desc = "A silver medal."
 	icon_state = "silver"
 	item_color = "silver"
+	medaltype = "medal-silver"
 	materials = list(MAT_SILVER=1000)
 
 /obj/item/clothing/accessory/medal/silver/valor
@@ -143,6 +155,7 @@
 	desc = "A prestigious golden medal."
 	icon_state = "gold"
 	item_color = "gold"
+	medaltype = "medal-gold"
 	materials = list(MAT_GOLD=1000)
 
 /obj/item/clothing/accessory/medal/gold/captain
@@ -159,6 +172,7 @@
 	desc = "An eccentric medal made of plasma."
 	icon_state = "plasma"
 	item_color = "plasma"
+	medaltype = "medal-plasma"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = -10, acid = 0) //It's made of plasma. Of course it's flammable.
 	materials = list(MAT_PLASMA=1000)
 
